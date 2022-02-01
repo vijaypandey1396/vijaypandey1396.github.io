@@ -1032,3 +1032,65 @@ section .container {
 .gprev, .gnext{
   display: none !important;
 } 
+
+/*--------------------------------------------------------------
+# For Acordion
+--------------------------------------------------------------*/
+.singleCol {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.accordion-button {
+  font-size: inherit;
+}
+
+.accordion-item {
+  border: 1px solid rgba(35, 65, 100, .15)
+}
+
+.accordion-button:not(.collapsed) {
+  color: inherit;
+  background:  rgba(61, 61, 61, 0.12);;
+  transition: ease-in-out 0.3s;
+  color: white;
+}
+
+.accordion-button:not(.collapsed)::after  {
+  filter: brightness(00%) invert(70%);
+}
+
+.accordion-button:focus {
+  box-shadow: inherit;
+}
+
+@media (max-width: 767px) {
+  .accordion-body h3 {
+      font-size: calc(.95rem + 1.5vw);
+  }
+}
+#accordionExample{
+  background: #040404;
+}
+#accordionExample .collapsed{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: rgb(53,53,53);
+  transition: ease-in-out 0.3s;
+}
+#accordionExample .collapsed h3 {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 16px;
+  color: #fff;
+}
+#accordionExample .collapsed:hover {
+  background: rgba(61, 61, 61, 0.12);
+}
+.accordion-body{  
+  background-color: #040404;
+}
+
