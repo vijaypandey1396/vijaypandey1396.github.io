@@ -249,10 +249,10 @@
     $('section').addClass('customModification');
     var getHref = $(this).attr('href');
     console.log(getHref);
-    if(getHref == "#header"){
-    $('section').removeClass('customModification');
-    }
-    $('html, body').animate({ scrollTop: $(getHref).offset().top-100 }, 0);    
+    // if(getHref == "#header"){
+    // $('section').removeClass('customModification');
+    // }
+    $('html, body').animate({ scrollTop: $(getHref).offset().top-90 }, 0);    
    });
 })()
 
