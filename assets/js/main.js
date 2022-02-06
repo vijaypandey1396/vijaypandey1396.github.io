@@ -243,5 +243,47 @@
       clickable: true
     }
   });
-
+  $("#navbar ul li a").click(function(e) {
+    // jquery way
+    e.preventDefault();
+    $('section').addClass('customModification');
+    var getHref = $(this).attr('href');
+    console.log(getHref);
+    if(getHref == "#header"){
+    $('section').removeClass('customModification');
+    }
+    $('html, body').animate({ scrollTop: $(getHref).offset().top-100 }, 0);    
+   });
 })()
+
+$(document).ready(function () {
+  $(document).on("scroll", onScroll);
+
+  //smoothscroll
+
+});
+
+// Use Your Class or ID For Selection 
+function onScroll(event){
+  var scrollPos = $(document).scrollTop();
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    //console.log('you have reached at bottom of the page');
+    setTimeout(() => {
+      $('#navbar ul li a').removeClass("active");
+    $("#contactMenu").addClass("active");
+    }, 10);
+    } else{
+      $("#contactMenu").removeClass("active");
+    }
+  $('#navbar ul li a').each(function () {
+      var currLink = $(this);
+      var refElement = $(currLink.attr("href"));
+      if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+          $('#navbar ul li a').removeClass("active");
+          currLink.addClass("active");
+      }
+      else{
+          currLink.removeClass("active");
+      }
+  });
+}
